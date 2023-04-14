@@ -1,2 +1,2 @@
-
+basebot
 -DCATKIN_DEVEL_PREFIX=/home/arikakite/git_repos/ws/devel -DCMAKE_INSTALL_PREFIX=/home/arikakite/git_repos/ws/install -G Unix Makefiles

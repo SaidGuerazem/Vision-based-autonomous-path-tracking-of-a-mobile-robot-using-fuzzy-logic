@@ -1,0 +1,8 @@
+prefix=/home/arikakite/git_repos/ws/install
+
+Name: basebot
+Description: Description of basebot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
