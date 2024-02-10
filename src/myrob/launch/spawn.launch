@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro '$(find myrob)/urdf/m2wr.xacro'" />
+
+
+    <arg name="x" default="0.878766" />
+    <arg name="y" default="0.086738" />
+    <arg name="z" default="0.100000" />
+    <arg name="roll" default="0" />
+    <arg name="pitch" default="0" />
+    <arg name="yaw" default="-0.003732" />
+
+
+    <arg name="world" default="empty" />
+    <arg name="paused" default="false" />
+    <arg name="use_sim_time" default="true" />
+    <arg name="gui" default="true" />
+    <arg name="headless" default="false" />
+    <arg name="debug" default="false" />
+
+
+    <!-- <include 
+file = "$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch"/>
+   
+
+   
+<arg name = "world_file" value =  "$(find line_follower_turtlebot)/Maps/lfm1.world"/> -->
+    <!-- <group ns="calibration_gazebo">
+        <param name="use_gui" value="True"/>
+        
+        <node name="velocity_publisher" pkg="slider_publisher" type="slider_publisher" output="screen"
+    respawn="true">
+            <param name="file" value="$(find slider_publisher)/examples/Twist.yaml"/>
+            <remap from="/cmd_vel" to="landmark_vel"/>
+        </node> 
+        
+        
+        <param name="landmark_file" value="$(find calibration_gazebo)/sdf/landmark.sdf"/>
+        
+    
+        <node name="landmark_bridge" pkg="calibration_gazebo" type="move_landmark.py"/>
+        
+  </group> -->
+
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find myrob)/Maps/lfm1.world" />
+        <arg name="paused" value="$(arg paused)" />
+        <arg name="use_sim_time" value="$(arg use_sim_time)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="headless" value="$(arg headless)" />
+        <arg name="debug" value="$(arg debug)" />
+    </include>
+
+    <node name="m2wr_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-urdf -param robot_description -model m2wr -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" />
+
+    <!-- Load joint controller configurations from YAML file to parameter server -->
+    <rosparam file="$(find myrob)/config/caster_rear.yaml" command="load" />
+
+
+    <!-- load the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen"
+        args="caster_rear_joint_position_controller joint_state_controller" />
+
+    <!-- Combine joint values -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+        <remap from="/joint_states" to="/myrob/joint_states" />
+    </node>
+</launch>
