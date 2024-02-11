@@ -36,7 +36,7 @@ Different lightning conditions were used to simulate a better representation of 
 We used the Matlab Camera calibration toolbox to calibrate the camera inside the Gazebo world as it is represented in the following figures (The calibration was done based on the chessboard method).
 
 
-<img src="imgs/test1" alt="cicuit" width="500"/>
+<img src="imgs/test1.png" alt="cicuit" width="500"/>
 
 
 <img src="imgs/test4.png" alt="circuit2" width="500"/>
