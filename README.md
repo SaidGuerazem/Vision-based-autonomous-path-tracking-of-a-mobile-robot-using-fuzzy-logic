@@ -25,6 +25,23 @@ Detailed instructions on setting up and running the system can be found in the `
 ## Environment
 We present first the environment that we created on Gazebo to have some accurate representations for the simulation.
 
+<img src="imgs/env1.png" alt="cicuit" width="500"/>
+
+
+<img src="imgs/env2.png" alt="circuit2" width="500"/>
+
+Different lightning conditions were used to simulate a better representation of real world conditions.
+## Camera Calibration
+
+We used the Matlab Camera calibration toolbox to calibrate the camera inside the Gazebo world as it is represented in the following figures (The calibration was done based on the chessboard method).
+
+
+<img src="imgs/test1" alt="cicuit" width="500"/>
+
+
+<img src="imgs/test4.png" alt="circuit2" width="500"/>
+
+<img src="imgs/calib.png" alt="circuit2" width="500"/>
 
 ## Acknowledgments
 
@@ -35,4 +52,5 @@ We acknowledge the original research team for their pioneering work and inspirat
 For inquiries or collaboration opportunities, please contact:
 - [Said GUERAZEM](mailto:said.guerazem@g.enp.edu.dz)
 - [Zakaria Fakhri SASSI](mailto:zakaria_fakhri.sassi@g.enp.edu.dz )
+
 
