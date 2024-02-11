@@ -23,7 +23,7 @@ The original work was inspired by a research paper ([link to the paper](https://
 
 Detailed instructions on setting up and running the system can be found in the `docs/` directory.-->
 ## Environment
-
+We present first the environment that we created on Gazebo to have some accurate representations for the simulation.
 
 
 ## Acknowledgments
