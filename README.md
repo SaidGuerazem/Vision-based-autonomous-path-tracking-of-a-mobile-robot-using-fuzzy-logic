@@ -43,6 +43,10 @@ We used the Matlab Camera calibration toolbox to calibrate the camera inside the
 
 <img src="imgs/calib.png" alt="circuit2" width="500"/>
 
+## Results
+
+This repository is yet to be finalized. A representative video of the simulation will be added later-on.
+
 ## Acknowledgments
 
 We acknowledge the original research team for their pioneering work and inspiration for this project. This project was mainly a recreation of their work as our contribution was mainly in creating the simulation on ROS and Gazebo.
