@@ -12,7 +12,7 @@ Additionally, we plan to enhance the visual system's robustness by implementing 
 
 The original work was inspired by a research paper ([link to the paper](https://ieeexplore.ieee.org/document/7053862)) and was reimplemented in Python and Gazebo. It is noteworthy that our project was recognized as the best seminar project among our peers.
 
-## Project Structure
+<!--## Project Structure
 
 - `src/`: Contains the source code for the autonomous path tracking system.
 - `docs/`: Documentation related to the project, including technical specifications and guides.
@@ -21,7 +21,7 @@ The original work was inspired by a research paper ([link to the paper](https://
 
 ## How to Use
 
-Detailed instructions on setting up and running the system can be found in the `docs/` directory.
+Detailed instructions on setting up and running the system can be found in the `docs/` directory.-->
 
 ## Acknowledgments
 
